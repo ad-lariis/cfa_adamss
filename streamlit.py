@@ -10,6 +10,7 @@ Created on Tue Dec  3 15:18:15 2024
 
 import streamlit as st
 import streamlit.components.v1 as components
+from PIL import Image
 
 
 
@@ -32,3 +33,8 @@ bcn_map_html = get_map()
 with st.container():
   components.html(bcn_map_html,width=800, height=500)
   
+  
+  
+image = Image.open('res/logo_couleur.png')
+
+st.image(image, width=150)
