@@ -14,8 +14,8 @@ import streamlit.components.v1 as components
 
 
 
-st.title('Carte mobilité apprentis')
-st.write('Carte des flux de mobilité des apprentis')
+st.title('Carte de mobilité des apprentis')
+st.write("Flux entre leur code postal de résidence avant l'apprentissage et celui durant l'apprentissage")
 
 
 
@@ -31,5 +31,4 @@ bcn_map_html = get_map()
 
 with st.container():
   components.html(bcn_map_html,width=800, height=500)
-  
   
