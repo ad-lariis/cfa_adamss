@@ -15,13 +15,20 @@ import pandas as pd
 import geopandas as gpd
 
 
-st.set_page_config(layout='wide')
+
+
+
+st.set_page_config(layout='centered')
+
 
 st.title('Carte de mobilité des apprentis')
 st.write("Flux entre leur code postal de résidence avant l'apprentissage et celui durant l'apprentissage")
 
 
 @st.cache_data()
+
+
+
 
 #carte
 def get_map():
@@ -51,15 +58,21 @@ data_cp.reset_index(drop=True, inplace=True)
 col1, intercol, col2 = st.columns((3,1,2))
 
 
-with col1:
-    components.html(bcn_map_html,width=780, height=500)
+
+with st.container():
     
+    components.html(bcn_map_html,width=1000, height=600)
+    
+    _ = '''
     image = Image.open('res/logo_couleur.png')
     st.image(image, width=150)
-  
+    '''
 
 
-with col2:
+
+
+with st.container():
+    
     st.dataframe(data_cp, column_config={
         'CP': 'Code postal',
         'DEP': 'Département',
@@ -67,11 +80,15 @@ with col2:
         'apprentis_CP1': "Nombre total d'apprentis"},
         hide_index=True,
         height=500,
-        width=400)
+        width=1000)
+
+
+
+
         
-    _ = '''
-    st.write(pd.read_csv(StringIO(view_csv)))
-    '''
+_ = '''
+st.write(pd.read_csv(StringIO(view_csv)))
+'''
     
     
 _ = '''
