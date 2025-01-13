@@ -61,7 +61,7 @@ col1, intercol, col2 = st.columns((3,1,2))
 
 with st.container():
     
-    components.html(bcn_map_html,width=1000, height=600)
+    components.html(bcn_map_html, height=400, width=500)
     
     _ = '''
     image = Image.open('res/logo_couleur.png')
@@ -80,7 +80,7 @@ with st.container():
         'apprentis_CP1': "Nombre total d'apprentis"},
         hide_index=True,
         height=500,
-        width=1000)
+        width=600)
 
 
 
