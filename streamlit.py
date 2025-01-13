@@ -61,7 +61,7 @@ col1, intercol, col2 = st.columns((3,1,2))
 
 with st.container():
     
-    components.html(bcn_map_html, height=400, width=500)
+    components.html(bcn_map_html, height=500, width=800)
     
     _ = '''
     image = Image.open('res/logo_couleur.png')
